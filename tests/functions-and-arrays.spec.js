@@ -93,7 +93,7 @@ describe('Calculate the sum of array of numbers', () => {
   test('should return the sum when passed array of numbers', () => {
     expect(sumNumbers([10, 5, 4, 32, 8])).toBe(59);
   });
-});
+}); 
 
 describe('Bonus: Calculate the sum', () => {
   test('should declare a function named sum', () => {
