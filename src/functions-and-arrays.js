@@ -45,27 +45,62 @@ function sumNumbers(arrNum) {
   return sum;   
 }
 
-console.log(sumNumbers(numbers)); // 87
-console.log(sumNumbers([])); // 0
-console.log(typeof sumNumbers); //function
-console.log(sumNumbers([4])); // 4
-console.log(sumNumbers([0, 0, 0, 0, 0])); // 0
-console.log(sumNumbers([10, 5, 4, 32, 8])); // 59
+// console.log(sumNumbers(numbers)); // 87
+// console.log(sumNumbers([])); // 0
+// console.log(typeof sumNumbers); //function
+// console.log(sumNumbers([4])); // 4
+// console.log(sumNumbers([0, 0, 0, 0, 0])); // 0
+// console.log(sumNumbers([10, 5, 4, 32, 8])); // 59
 
 
 // Iteration #3.1 Bonus:
-function sum() {}
+const mixedArr = [6, 12, 'miami', 1, true, 'barca', '200', 'lisboa', 8, 10]; 
+
+function sum(mixArr) {
+  let sum = 0;
+  mixArr.forEach(item => {
+    if (typeof item === 'string') {
+      sum += item.length;
+    } else {
+      sum += item;
+    }
+  });
+  return sum;
+}
+
+// console.log(sum(mixedArr)); // 57
+// console.log(sum([4])); // 4
+// console.log(sum([10, 5, 4, 32, 8])); //59
+// console.log(sum(['ana', 'marco', 'nicolas', 'tania', 'ptwd'])); // 24
+// console.log(sum([6, 12, 'miami', 1, 'barca', '200', 'lisboa', 8, 10])); // 56
+// console.log(sum([6, 12, 'miami', 1, 'barca', '200', 'lisboa', 8, false])); // 46
+// console.log(sum([6, 12, 'miami', 1, 'barca', '200', 'lisboa', 8, true])); // 47
+
 
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
-function averageNumbers() {}
+function averageNumbers(numArr) {
+  let sum = sumNumbers(numArr);
+  return Math.round(sum/numArr.length);
+}
+
+// console.log(averageNumbers(numbersAvg)); // 6
+// console.log(averageNumbers([9, -3, -4, 6])); // 2
+// console.log(averageNumbers([9, 10, 82, 92, 32, 102, 58])); // 55
 
 // Level 2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
 
-function averageWordLength() {}
+function averageWordLength(wordArr) {
+  let totalLength = sum(wordArr);
+  return Math.round(totalLength/wordArr.length);
+}
+
+console.log(averageWordLength(wordsArr)); // 5
+console.log(averageWordLength(['ironhack'])); // 8
+console.log(averageWordLength(['Ironhack', 'Madrid', 'Barcelona', 'Paris', 'Miami', 'Mexico', 'Berlin', 'Programmers'])); // 7
 
 // Bonus - Iteration #4.1
 function avg() {}
