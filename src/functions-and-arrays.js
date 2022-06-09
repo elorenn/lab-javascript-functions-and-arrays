@@ -94,7 +94,16 @@ function uniquifyArrayWithSet() {}
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
 
-function doesWordExist() {}
+function doesWordExist(wordArr, word) {
+  return wordArr.includes(word);
+}
+
+// console.log(doesWordExist(wordsFind, 'nope')); // false
+// console.log(doesWordExist(wordsFind, 'matter')); // true
+// console.log(doesWordExist([])); // null ??
+// console.log(doesWordExist(['machine'], 'machine')); // true
+// console.log(doesWordExist(['machine', 'poison', 'eat', 'apple', 'horse'], 'ratatouille')); // false
+// console.log(doesWordExist(['pizza', 'sandwich', 'snack', 'soda', 'book', 'computer'], 'book')); // true
 
 // Iteration #7: Count repetition
 const wordsCount = [
