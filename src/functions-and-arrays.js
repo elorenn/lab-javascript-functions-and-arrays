@@ -98,12 +98,22 @@ function averageWordLength(wordArr) {
   return Math.round(totalLength/wordArr.length);
 }
 
-console.log(averageWordLength(wordsArr)); // 5
-console.log(averageWordLength(['ironhack'])); // 8
-console.log(averageWordLength(['Ironhack', 'Madrid', 'Barcelona', 'Paris', 'Miami', 'Mexico', 'Berlin', 'Programmers'])); // 7
+// console.log(averageWordLength(wordsArr)); // 5
+// console.log(averageWordLength(['ironhack'])); // 8
+// console.log(averageWordLength(['Ironhack', 'Madrid', 'Barcelona', 'Paris', 'Miami', 'Mexico', 'Berlin', 'Programmers'])); // 7
 
 // Bonus - Iteration #4.1
-function avg() {}
+const mixedArr2 = [6, 12, 'miami', 1, true, 'barca', '200', 'lisboa', 8, 10]; // should return: 5.7
+
+function avg(arr) {
+  let total = sum(arr);
+  return Math.round((total/arr.length) * 100) / 100;
+}
+
+// console.log(avg(mixedArr2)); // 5.7
+// console.log(avg([6, 12, 'miami', 1, 'barca', '200', 'lisboa', 8, false])); // 5.11
+// console.log(avg([6, 12, 'miami', 1, 'barca', '200', 'lisboa', 8, true])); // 5.22
+
 
 // Iteration #5: Unique arrays
 const wordsUnique = [
