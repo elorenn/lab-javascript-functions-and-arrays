@@ -68,7 +68,10 @@ function sum(mixArr) {
   }
   let sum = 0;
   mixArr.forEach(item => {
-    if (typeof item === 'string') {
+    if (typeof item === 'object') {
+      throw `Unsupported data type sir or ma'am`;
+    }
+    else if (typeof item === 'string') {
       sum += item.length;
     } else {
       sum += item;
@@ -84,7 +87,7 @@ function sum(mixArr) {
 // console.log(sum([6, 12, 'miami', 1, 'barca', '200', 'lisboa', 8, 10])); // 56
 // console.log(sum([6, 12, 'miami', 1, 'barca', '200', 'lisboa', 8, false])); // 46
 // console.log(sum([6, 12, 'miami', 1, 'barca', '200', 'lisboa', 8, true])); // 47
-
+console.log(sum([6, 12, 'miami', 1, 'barca', '200', 'lisboa', 8, [], {}])); // Error("Unsupported data type sir or ma'am")
 
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
@@ -194,7 +197,7 @@ function uniquifyArrayWithSet(wordArr) {
 
 
 
-console.log(uniquifyArrayWithSet(wordsUnique));  //['crab','poison','contagious','simple','bring','sharp','playground','communion']
+// console.log(uniquifyArrayWithSet(wordsUnique));  //['crab','poison','contagious','simple','bring','sharp','playground','communion']
 
 
 // Iteration #6: Find elements
