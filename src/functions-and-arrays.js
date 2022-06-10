@@ -134,7 +134,7 @@ const wordsUnique = [
 //   let filtered = [];
 //   for (let i=0; i < wordArr.length; i++) {
 //     if (wordArr.indexOf(wordArr[i], i+1) === -1) {
-//       filtered.push(wordArr[i]);
+//       filtered.unshift(wordArr[i]);
 //     }
 //   }
 //   return filtered;
@@ -155,9 +155,18 @@ function uniquifyArray(wordArr) {
 // console.log(uniquifyArray(['Cat', 'Dog', 'Cow'])); // ['Cat', 'Dog', 'Cow']
 // console.log(uniquifyArray(['iPhone', 'Samsung', 'Android', 'iOS', 'iPhone', 'Samsung', 'Nokia', 'Blackberry', 'Android'])); //['iPhone', 'Samsung', 'Android', 'iOS', 'Nokia', 'Blackberry'] 
 
+
+
 // Bonus - Iteration #5.1: Unique arrays using Set
 
-function uniquifyArrayWithSet() {}
+function uniquifyArrayWithSet(wordArr) {
+  // let set = new Set(wordArr);
+  // return [...set];  
+  return [...(new Set(wordArr))];
+}
+
+console.log(uniquifyArrayWithSet(wordsUnique));  //['crab','poison','contagious','simple','bring','sharp','playground','communion']
+
 
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
@@ -172,6 +181,7 @@ function doesWordExist(wordArr, word) {
 // console.log(doesWordExist(['machine'], 'machine')); // true
 // console.log(doesWordExist(['machine', 'poison', 'eat', 'apple', 'horse'], 'ratatouille')); // false
 // console.log(doesWordExist(['pizza', 'sandwich', 'snack', 'soda', 'book', 'computer'], 'book')); // true
+
 
 // Iteration #7: Count repetition
 const wordsCount = [
@@ -188,7 +198,26 @@ const wordsCount = [
   'matter'
 ];
 
-function howManyTimes() {}
+function howManyTimes(wordArr, word) {
+  if (wordArr.length === 0)  {
+    return 0;
+  }
+  let counter = 0;
+  wordArr.forEach(item => {
+    if (item === word ) {
+      counter++;
+    }
+  });
+  return counter;
+}
+
+// console.log(howManyTimes(wordsCount, "matter")); // 4
+// console.log(howManyTimes(['basketball', 'football', 'tennis'], 'tennis')); // 1
+
+
+
+
+
 
 // The following is required to make unit tests work.
 /* Environment setup. Do not modify the below code. */
