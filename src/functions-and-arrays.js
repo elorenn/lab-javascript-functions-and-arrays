@@ -130,7 +130,30 @@ const wordsUnique = [
   'bring'
 ];
 
-function uniquifyArray() {}
+// function uniquifyArray(wordArr) {
+//   let filtered = [];
+//   for (let i=0; i < wordArr.length; i++) {
+//     if (wordArr.indexOf(wordArr[i], i+1) === -1) {
+//       filtered.push(wordArr[i]);
+//     }
+//   }
+//   return filtered;
+// }
+
+function uniquifyArray(wordArr) {
+  let filtered = [];
+    for (let i=0; i < wordArr.length; i++) {
+      if (filtered.indexOf(wordArr[i]) === -1) {
+        filtered.push(wordArr[i]);
+      }
+    } 
+  return filtered;
+}
+
+// console.log(uniquifyArray(wordsUnique)); //['crab','poison','contagious','simple','bring','sharp','playground','communion']
+// console.log(uniquifyArray(['Ironhack', 'Ironhack', 'Ironhack'])); //Ironhack
+// console.log(uniquifyArray(['Cat', 'Dog', 'Cow'])); // ['Cat', 'Dog', 'Cow']
+// console.log(uniquifyArray(['iPhone', 'Samsung', 'Android', 'iOS', 'iPhone', 'Samsung', 'Nokia', 'Blackberry', 'Android'])); //['iPhone', 'Samsung', 'Android', 'iOS', 'Nokia', 'Blackberry'] 
 
 // Bonus - Iteration #5.1: Unique arrays using Set
 
