@@ -17,6 +17,9 @@ function maxOfTwoNumbers(num1, num2) {
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
 
 function findLongestWord(arrWords) {
+  if (arrWords.length === 0) {
+    return null;
+  }
   let longest = "";
   for (let i = 0; i < arrWords.length; i++) {
     if (arrWords[i].length > longest.length) {
@@ -38,6 +41,9 @@ function findLongestWord(arrWords) {
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
 function sumNumbers(arrNum) {
+  if (arrNum.length === 0) {
+    return 0;
+  }
   let sum = 0;
   arrNum.forEach(number => {
     sum += number;
@@ -57,6 +63,9 @@ function sumNumbers(arrNum) {
 const mixedArr = [6, 12, 'miami', 1, true, 'barca', '200', 'lisboa', 8, 10]; 
 
 function sum(mixArr) {
+  if (mixArr.length === 0) {
+    return 0;
+  }
   let sum = 0;
   mixArr.forEach(item => {
     if (typeof item === 'string') {
@@ -82,6 +91,9 @@ function sum(mixArr) {
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
 function averageNumbers(numArr) {
+  if (numArr.length === 0) {
+    return null;
+  }
   let sum = sumNumbers(numArr);
   return Math.round(sum/numArr.length);
 }
@@ -94,6 +106,9 @@ function averageNumbers(numArr) {
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
 
 function averageWordLength(wordArr) {
+  if (wordArr.length === 0) {
+    return null;
+  }
   let totalLength = sum(wordArr);
   return Math.round(totalLength/wordArr.length);
 }
@@ -106,6 +121,9 @@ function averageWordLength(wordArr) {
 const mixedArr2 = [6, 12, 'miami', 1, true, 'barca', '200', 'lisboa', 8, 10]; // should return: 5.7
 
 function avg(arr) {
+  if (arr.length === 0) {
+    return null;
+  }
   let total = sum(arr);
   return Math.round((total/arr.length) * 100) / 100;
 }
@@ -141,6 +159,9 @@ const wordsUnique = [
 // }
 
 function uniquifyArray(wordArr) {
+  if (wordArr.length === 0) {
+    return null;
+  }
   let filtered = [];
     for (let i=0; i < wordArr.length; i++) {
       if (filtered.indexOf(wordArr[i]) === -1) {
@@ -159,11 +180,19 @@ function uniquifyArray(wordArr) {
 
 // Bonus - Iteration #5.1: Unique arrays using Set
 
+// function uniquifyArrayWithSet(wordArr) {
+//   let set = new Set(wordArr);
+//   return [...set];  
+// }
+
 function uniquifyArrayWithSet(wordArr) {
-  // let set = new Set(wordArr);
-  // return [...set];  
+  if (wordArr.length === 0) {
+    return null;
+  }
   return [...(new Set(wordArr))];
 }
+
+
 
 console.log(uniquifyArrayWithSet(wordsUnique));  //['crab','poison','contagious','simple','bring','sharp','playground','communion']
 
@@ -172,6 +201,9 @@ console.log(uniquifyArrayWithSet(wordsUnique));  //['crab','poison','contagious'
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
 
 function doesWordExist(wordArr, word) {
+  if (wordArr.length === 0) {
+    return null;
+  }
   return wordArr.includes(word);
 }
 
